@@ -185,6 +185,7 @@ for /L %%i in (1,1,%iiiii%) do (
     )
 )
 powershell -Command "Start-Process cmd -ArgumentList '/c color a & echo Hello World!' -Verb RunAs"
+echo.
 set /a iiiii=%RANDOM% %% 3
 if "%iiiii%"=="1" ( 
 	echo Connection Lost, trying again.
