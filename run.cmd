@@ -179,12 +179,17 @@ for /L %%i in (1,1,%iiiii%) do (
     for %%A in (^| / - \) do (
         :: Print the spinner, then backspace it away
         <nul set /p "=!BS!%%A"
-        
+		
         :: Millisecond delay
         ping 128.0.0.1 -n 1 -w 10	 >nul
     )
 )
 powershell -Command "Start-Process cmd -ArgumentList '/c color a & echo Hello World!' -Verb RunAs"
+set /a iiiii=%RANDOM% %% 3
+if "%iiiii%"=="1" ( 
+	echo Connection Lost, trying again.
+	goto lllll
+)
 echo.
 echo Done!
 goto ll
