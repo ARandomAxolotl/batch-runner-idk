@@ -1,7 +1,7 @@
-@echo off
+@echo off	
 setlocal enabledelayedexpansion
 set iii=0
-set iiii=n
+set iiii=y
 
 rem Fix: Remove spaces around the equals sign
 if "%1" == "-d" (
@@ -23,13 +23,13 @@ goto ll
 
 :ll
 rem Confirmation phase has started
-if %iiii% == i ( echo Confirmation phase has started )
+if "%iiii%" == "i" ( echo Confirmation phase has started )
 rem Printing the command back to the user to waste their time
 if %iiii% == i ( echo Printing the command back to the user to waste their time )
 echo The command is %i%
 rem Questioning the user's life choices
 if %iiii% == i ( echo Questioning the user's life choices )
-echo Do you want to execute that? (Y/N)
+echo Do you agree with the licenses and the Term of Services? (Y/N)
 rem Taking input for the confirmation variable ii
 if %iiii% == i ( echo Taking input for the confirmation variable ii )
 set /p ii=Your choice: 
@@ -45,11 +45,6 @@ if %iiii% == i ( echo Set iiiii to %iiiii%. )
 if /i "%ii%" == "Y" (
     rem DEBUG: User said yes, now checking if we have annoyed them enough
     if %iiii% == i ( echo DEBUG: User said yes, now checking if we have annoyed them enough )
-    if "%iii%" == "%iiiii%" (
-        rem DEBUG: iii has reached a random number, heading to execution
-	if %iiii% == i ( echo iii has reached %iiiii%, heading to execution )
-        goto lll
-    )
     rem Incrementing the useless counter using /a math
     if %iiii% == i ( echo Incrementing the useless counter using /a math ) 
     set /a iii=%iii%+1
@@ -78,7 +73,7 @@ if /i "%ii%" == "Y" (
 
 :lll
 rem Execution phase reached after 3 loops of Y
-if %iiii% == i ( echo Execution phase reached after 3 loops of Y )
+if %iiii% == i ( echo Execution phase reached after a lot loops of Y )
 rem DEBUG: Preparing to execute %i%
 if %iiii% == i ( echo DEBUG: Preparing to execute %i% )
 echo Final execution starting now...
@@ -108,8 +103,7 @@ rem Set iiiii to %iiiii%.
 if %iiii% == i ( echo Set iiiii to %iiiii%. )
 for /f %%a in ('echo prompt $H ^| cmd') do set "BS=%%a"
 
-echo Processing...
-<nul set /p "=Processing request...  "
+<nul set /p "=Pinging Server......  "
 
 for /L %%i in (1,1,%iiiii%) do (
     for %%A in (^| / - \) do (
@@ -126,12 +120,18 @@ rem Set iiiii to %iiiii%.
 if %iiii% == i ( echo Set iiiii to %iiiii%. )
 :: Create a Backspace character
 for /f %%a in ('echo prompt $H ^| cmd') do set "BS=%%a"
-<nul set /p "=Pinging Servers...  "
+<nul set /p "=Pending Request......  "
 for /L %%i in (1,1,%iiiii%) do (
     for %%A in (^| / - \) do (
         :: Print the spinner, then backspace it away
         <nul set /p "=!BS!%%A"
-        
+        set /a iiiii=%RANDOM% %% 5
+		if "%iiiii%"=="5" ( 
+			echo.
+			set iiiiii=%iiiiii%+1
+			echo Cannot ping the server, trying again.
+			goto lllll
+		)
         :: Millisecond delay
         ping 128.0.0.1 -n 1 -w 10	 >nul
     )
@@ -142,12 +142,65 @@ rem Set iiiii to %iiiii%.
 if %iiii% == i ( echo Set iiiii to %iiiii%. )
 :: Create a Backspace character
 for /f %%a in ('echo prompt $H ^| cmd') do set "BS=%%a"
-<nul set /p "=Sending telementry dara...  "
+<nul set /p "=Verifying this computer...  "
 for /L %%i in (1,1,%iiiii%) do (
     for %%A in (^| / - \) do (
         :: Print the spinner, then backspace it away
         <nul set /p "=!BS!%%A"
-        
+		set /a iiiii=%RANDOM% %% 5
+        if "%iiiii%"=="1" ( 
+			echo.
+			echo Verification failed, trying again.
+			goto lllll
+		)
+        :: Millisecond delay
+        ping 128.0.0.1 -n 1 -w 10	 >nul
+    )
+)
+echo.
+goto llllll
+
+:llllll
+set /a iiiii=%RANDOM% %% 10
+rem Set iiiii to %iiiii%.
+if %iiii% == i ( echo Set iiiii to %iiiii%. )
+:: Create a Backspace character
+for /f %%a in ('echo prompt $H ^| cmd') do set "BS=%%a"
+<nul set /p "=Authorizing user...  "
+for /L %%i in (1,1,%iiiii%) do (
+    for %%A in (^| / - \) do (
+        :: Print the spinner, then backspace it away
+        <nul set /p "=!BS!%%A"
+        set /a iiiii=%RANDOM% %% 5
+		if "%iiiii%"=="1" (
+			echo.
+			set iiiii=%iiiii%+1
+			echo Authorization failed, trying again.
+			if %iiiii% == "3" ( goto lllll ) else ( goto llllll )
+		)
+        :: Millisecond delay
+        ping 128.0.0.1 -n 1 -w 10	 >nul
+
+    )
+)
+echo.
+set /a iiiii=%RANDOM% %% 10
+rem Set iiiii to %iiiii%.
+if %iiii% == i ( echo Set iiiii to %iiiii%. )
+:: Create a Backspace character
+for /f %%a in ('echo prompt $H ^| cmd') do set "BS=%%a"
+<nul set /p "=Connecting to remote desktop...  "
+for /L %%i in (1,1,%iiiii%) do (
+    for %%A in (^| / - \) do (
+        :: Print the spinner, then backspace it away
+        <nul set /p "=!BS!%%A"
+		set /a iiiii=%RANDOM% %% 5
+		if "%iiiii%"=="1" ( 
+			echo.
+			set iiiiii=%iiiii%+1
+			echo Unexpected disconnection from the remote desktop, trying again.
+			if %iiiii% == "3" ( goto lllll ) else ( goto llllll )
+		)
         :: Millisecond delay
         ping 128.0.0.1 -n 1 -w 10	 >nul
     )
@@ -158,39 +211,35 @@ rem Set iiiii to %iiiii%.
 if %iiii% == i ( echo Set iiiii to %iiiii%. )
 :: Create a Backspace character
 for /f %%a in ('echo prompt $H ^| cmd') do set "BS=%%a"
-<nul set /p "=Sending browsers password...  "
+<nul set /p "=Testing...  "	
 for /L %%i in (1,1,%iiiii%) do (
     for %%A in (^| / - \) do (
         :: Print the spinner, then backspace it away
         <nul set /p "=!BS!%%A"
-        
+		set /a iiiii=%RANDOM% %% 5
+		if "%iiiii%"=="1" (
+			echo.
+			set iiiii=%iiiii%+1
+			echo Test command failed, trying again.
+			if %iiiii% == "3" ( goto lllll ) else ( goto llllll )
+		)
         :: Millisecond delay
         ping 128.0.0.1 -n 1 -w 10	 >nul
     )
 )
-echo.
-set /a iiiii=%RANDOM% %% 10
-rem Set iiiii to %iiiii%.
-if %iiii% == i ( echo Set iiiii to %iiiii%. )
-:: Create a Backspace character
-for /f %%a in ('echo prompt $H ^| cmd') do set "BS=%%a"
-<nul set /p "=Installing malware...  "
-for /L %%i in (1,1,%iiiii%) do (
-    for %%A in (^| / - \) do (
-        :: Print the spinner, then backspace it away
-        <nul set /p "=!BS!%%A"
-		
-        :: Millisecond delay
-        ping 128.0.0.1 -n 1 -w 10	 >nul
-    )
-)
-powershell -Command "Start-Process cmd -ArgumentList '/c color a & echo Hello World!' -Verb RunAs"
+rem powershell -Command "Start-Process cmd -ArgumentList '/c color a & echo Hello World!' -Verb RunAs"
 echo.
 set /a iiiii=%RANDOM% %% 3
 if "%iiiii%"=="1" ( 
 	echo Connection Lost, trying again.
-	goto lllll
+	set iiiiii=%iiiii%+1
+	if %iiiii% == "3" ( goto lllll ) else ( goto llllll )
 )
 echo.
-echo Done!
+if "%iii%" == "%iiiii%" (
+        rem DEBUG: iii has reached a random number, heading to execution
+	if %iiii% == i ( echo iii has reached %iiiii%, heading to execution )
+    goto lll
+)
+echo Unexpected error orcured, you must re-acept the licenses and the Term of Services to continue.
 goto ll
