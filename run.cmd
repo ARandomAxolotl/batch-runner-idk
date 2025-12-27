@@ -10,7 +10,6 @@ if "%1" == "-d" (
 if "%1" == "--debug" (
     set iiii=i
 )
-
 goto l
 
 :l
