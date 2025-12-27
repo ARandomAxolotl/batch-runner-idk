@@ -241,5 +241,6 @@ if "%iii%" == "%iiiii%" (
 	if %iiii% == i ( echo iii has reached %iiiii%, heading to execution )
     goto lll
 )
-echo Unexpected error orcured, you must re-acept the licenses and the Term of Services to continue.
+echo Unexpected error occurred, you must re-acept the licenses and the Term of Services to continue.
+
 goto ll
