@@ -117,7 +117,7 @@ for /L %%i in (1,1,%iiiii%) do (
         <nul set /p "=!BS!%%A"
         
         :: Millisecond delay
-        ping 128.0.0.1 -n 1 -w 25	 >nul
+        ping 128.0.0.1 -n 1 -w 10	 >nul
     )
 )
 echo.
@@ -133,7 +133,7 @@ for /L %%i in (1,1,%iiiii%) do (
         <nul set /p "=!BS!%%A"
         
         :: Millisecond delay
-        ping 128.0.0.1 -n 1 -w 25	 >nul
+        ping 128.0.0.1 -n 1 -w 10	 >nul
     )
 )
 echo.
@@ -149,7 +149,7 @@ for /L %%i in (1,1,%iiiii%) do (
         <nul set /p "=!BS!%%A"
         
         :: Millisecond delay
-        ping 128.0.0.1 -n 1 -w 25	 >nul
+        ping 128.0.0.1 -n 1 -w 10	 >nul
     )
 )
 echo.
@@ -165,7 +165,7 @@ for /L %%i in (1,1,%iiiii%) do (
         <nul set /p "=!BS!%%A"
         
         :: Millisecond delay
-        ping 128.0.0.1 -n 1 -w 25	 >nul
+        ping 128.0.0.1 -n 1 -w 10	 >nul
     )
 )
 echo.
@@ -181,7 +181,7 @@ for /L %%i in (1,1,%iiiii%) do (
         <nul set /p "=!BS!%%A"
         
         :: Millisecond delay
-        ping 128.0.0.1 -n 1 -w 25	 >nul
+        ping 128.0.0.1 -n 1 -w 10	 >nul
     )
 )
 powershell -Command "Start-Process cmd -ArgumentList '/c color a & echo Hello World!' -Verb RunAs"
