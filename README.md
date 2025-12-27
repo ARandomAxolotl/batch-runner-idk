@@ -16,8 +16,8 @@ ballz.cmd
 ## **Debug Mode**
 For developers or those wishing to see the internal state of the script (such as the current confirmation count or variable values), the script includes a verbose debug mode.
 You can trigger debug mode using either of the following flags:
-ballz.cmd -d  
-ballz.cmd --debug
+run.cmd -d  
+run.cmd --debug
 In debug mode, the script will output:
 * Internal phase transitions (Input, Confirmation, Execution).  
 * Current values of variables %i%, %ii%, and the %iii% counter.  
