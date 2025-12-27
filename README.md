@@ -1,28 +1,33 @@
-# **Command Runner**
-A robust, multi-stage confirmation wrapper for Windows command-line execution. This script ensures that commands are intended by requiring repetitive user verification before final execution.
+# **🎰 Command Runner: Nightmare Edition**
+> *"Because if you really wanted to run that command, you'd be willing to suffer for it."*
 
-## **Features**
-* **Multi-Stage Verification**: Implements a verification counter (iii) that requires the user to confirm the command three times before it is processed. 
-* **Safe Variable Handling**: Uses quoted string comparisons to prevent common batch script crashes caused by unexpected special characters or empty inputs.  
-* **Case-Sensitive Validation**: Distinguishes between strict "Y" confirmation and other inputs to ensure intent.
+Forget efficiency. This is a robust, multi-stage psychological gauntlet designed to prevent command execution through sheer exhaustion, randomized failure, and the constant threat of a system-killing fork bomb.
 
-## **Usage**
-Simply run the script to start the interactive prompt:
-ballz.cmd
-1. **Enter Command**: Input the CLI command you wish to run.  
-2. **Confirm (x3)**: Type Y and press Enter when prompted. You must do this three times.  
-3. **Execution**: After the final confirmation, the script will execute your command and display the output.
+## **🚀 New "Features"**
+* **The Absolute Luck Engine**: Unlike previous versions, confirmation is now 100% luck-based. The script rolls a random number (0-9); if your attempt count doesn't match the secret roll, you start the gauntlet over.
+* **Artificial Latency Gauntlet**: Every "Y" confirmation triggers a mandatory series of fake processing stages:
+    * **Pinging Servers**
+    * **Verifying Computer**
+    * **Authorizing User**
+    * **Connecting to Remote Desktop**
+    * **Installing Malware...** (Wait, what?)
+* **Recursive Failure Logic**: At any moment, the script may claim "Connection Lost" or "Authorization Failed," sending you back to the start of the spinner loops.
+* **The "Unexpected Error" Reset**: Even if you pass the gauntlet, the script may decide an "Unexpected error orcured," forcing you to re-accept the licenses and start the entire process from the very beginning.
 
-## **Debug Mode**
-For developers or those wishing to see the internal state of the script (such as the current confirmation count or variable values), the script includes a verbose debug mode.
-You can trigger debug mode using either of the following flags:
-run.cmd -d  
-run.cmd --debug
-In debug mode, the script will output:
-* Internal phase transitions (Input, Confirmation, Execution).  
-* Current values of variables %i%, %ii%, and the %iii% counter.  
-* Fix/Logic notifications.
+## **🕹️ Usage**
+1. **Enter Command**: Input the command you wish to run.  
+2. **The Licenses**: Agree to the terms (if you dare).  
+3. **The Grind**: Watch randomized spinners rotate for minutes at a time.
+4. **The UAC Interruption**: Deal with Windows User Account Control prompts just for a "Hello World" window.
+5. **Execution**: If the universe aligns and the `%RANDOM%` generator favors you, your command will finally execute.
 
-## **Requirements**
-* Windows OS  
-* Command Prompt (cmd.exe)
+## **🛠️ Debug Mode**
+Trigger maximum screen-clutter by running:
+`run.cmd -d` or `run.cmd --debug`
+
+This will output:
+* Every secret random number roll (so you can see exactly how unlucky you are).
+* Internal logic fixes and stage transitions.
+
+## **⚠️ Warning**
+Do not use this script if you value your time, your sanity, or your computer's RAM.
