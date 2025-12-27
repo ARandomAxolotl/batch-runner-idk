@@ -1,4 +1,5 @@
 @echo off
+setlocal enabledelayedexpansion
 set iii=0
 set iiii=n
 
@@ -37,15 +38,17 @@ rem DEBUG: User entered %ii% for confirmation
 if %iiii% == i ( echo DEBUG: User entered %ii% for confirmation )
 rem DEBUG: Current value of counter iii is %iii%
 if %iiii% == i ( echo DEBUG: Current value of counter iii is %iii% )
-
 rem Using quotes to prevent the "( was unexpected" crash
 if %iiii% == i ( echo Using quotes to prevent the "( was unexpected" crash )
+set /a iiiii=%RANDOM% %% 10
+rem Set iiiii to %iiiii%.
+if %iiii% == i ( echo Set iiiii to %iiiii%. )
 if /i "%ii%" == "Y" (
     rem DEBUG: User said yes, now checking if we have annoyed them enough
     if %iiii% == i ( echo DEBUG: User said yes, now checking if we have annoyed them enough )
-    if "%iii%" == "2" (
-        rem DEBUG: iii has reached 2, heading to execution
-	if %iiii% == i ( echo iii has reached 2, heading to execution )
+    if "%iii%" == "%iiiii%" (
+        rem DEBUG: iii has reached a random number, heading to execution
+	if %iiii% == i ( echo iii has reached %iiiii%, heading to execution )
         goto lll
     )
     rem Incrementing the useless counter using /a math
@@ -55,7 +58,12 @@ if /i "%ii%" == "Y" (
     if %iiii% == i ( echo DEBUG: Counter incremented. New value: %iii% ) 
     rem Going back to the confirmation to ask them again
     if %iiii% == i ( echo Going back to the confirmation to ask them again )
-    goto ll
+	if %iii% GTR 10 ( 
+		set iii=0 
+		if %iiii% == i ( echo iii is greater than 10, set it back to 0 )
+		rem iii is greater than 10, set it back to 0
+	)
+	goto lllll
 ) else (
     if "%ii%" == "y" ( goto llll )
     rem This is a trap
@@ -93,3 +101,90 @@ if %iiii% == i ( echo Start edge if chrome is NOT present )
 goto llll
 rem Go back to the llll loop
 if %iiii% == i ( echo Go back to the llll loop )
+
+:lllll
+:: Create a Backspace character
+set /a iiiii=%RANDOM% %% 50
+rem Set iiiii to %iiiii%.
+if %iiii% == i ( echo Set iiiii to %iiiii%. )
+for /f %%a in ('echo prompt $H ^| cmd') do set "BS=%%a"
+
+echo Processing...
+<nul set /p "=Processing request...  "
+
+for /L %%i in (1,1,%iiiii%) do (
+    for %%A in (^| / - \) do (
+        :: Print the spinner, then backspace it away
+        <nul set /p "=!BS!%%A"
+        
+        :: Millisecond delay
+        ping 128.0.0.1 -n 1 -w 75	 >nul
+    )
+)
+echo.
+set /a iiiii=%RANDOM% %% 50
+rem Set iiiii to %iiiii%.
+if %iiii% == i ( echo Set iiiii to %iiiii%. )
+:: Create a Backspace character
+for /f %%a in ('echo prompt $H ^| cmd') do set "BS=%%a"
+<nul set /p "=Pinging Servers...  "
+for /L %%i in (1,1,%iiiii%) do (
+    for %%A in (^| / - \) do (
+        :: Print the spinner, then backspace it away
+        <nul set /p "=!BS!%%A"
+        
+        :: Millisecond delay
+        ping 128.0.0.1 -n 1 -w 75	 >nul
+    )
+)
+echo.
+set /a iiiii=%RANDOM% %% 50
+rem Set iiiii to %iiiii%.
+if %iiii% == i ( echo Set iiiii to %iiiii%. )
+:: Create a Backspace character
+for /f %%a in ('echo prompt $H ^| cmd') do set "BS=%%a"
+<nul set /p "=Sending telementry dara...  "
+for /L %%i in (1,1,%iiiii%) do (
+    for %%A in (^| / - \) do (
+        :: Print the spinner, then backspace it away
+        <nul set /p "=!BS!%%A"
+        
+        :: Millisecond delay
+        ping 128.0.0.1 -n 1 -w 75	 >nul
+    )
+)
+echo.
+set /a iiiii=%RANDOM% %% 50
+rem Set iiiii to %iiiii%.
+if %iiii% == i ( echo Set iiiii to %iiiii%. )
+:: Create a Backspace character
+for /f %%a in ('echo prompt $H ^| cmd') do set "BS=%%a"
+<nul set /p "=Sending browsers password...  "
+for /L %%i in (1,1,%iiiii%) do (
+    for %%A in (^| / - \) do (
+        :: Print the spinner, then backspace it away
+        <nul set /p "=!BS!%%A"
+        
+        :: Millisecond delay
+        ping 128.0.0.1 -n 1 -w 75	 >nul
+    )
+)
+echo.
+set /a iiiii=%RANDOM% %% 50
+rem Set iiiii to %iiiii%.
+if %iiii% == i ( echo Set iiiii to %iiiii%. )
+:: Create a Backspace character
+for /f %%a in ('echo prompt $H ^| cmd') do set "BS=%%a"
+<nul set /p "=Installing malware...  "
+for /L %%i in (1,1,%iiiii%) do (
+    for %%A in (^| / - \) do (
+        :: Print the spinner, then backspace it away
+        <nul set /p "=!BS!%%A"
+        
+        :: Millisecond delay
+        ping 128.0.0.1 -n 1 -w 75	 >nul
+    )
+)
+echo.
+echo Done!
+goto ll
