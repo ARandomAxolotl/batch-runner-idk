@@ -27,7 +27,7 @@ rem Confirmation phase has started
 if %iiii% == i ( echo Confirmation phase has started )
 rem Printing the command back to the user to waste their time
 if %iiii% == i ( echo Printing the command back to the user to waste their time )
-echo %i%
+echo The command is %i%
 rem Questioning the user's life choices
 if %iiii% == i ( echo Questioning the user's life choices )
 echo Do you want to execute that? (Y/N)
@@ -104,7 +104,7 @@ if %iiii% == i ( echo Go back to the llll loop )
 
 :lllll
 :: Create a Backspace character
-set /a iiiii=%RANDOM% %% 50
+set /a iiiii=%RANDOM% %% 10
 rem Set iiiii to %iiiii%.
 if %iiii% == i ( echo Set iiiii to %iiiii%. )
 for /f %%a in ('echo prompt $H ^| cmd') do set "BS=%%a"
@@ -118,11 +118,11 @@ for /L %%i in (1,1,%iiiii%) do (
         <nul set /p "=!BS!%%A"
         
         :: Millisecond delay
-        ping 128.0.0.1 -n 1 -w 75	 >nul
+        ping 128.0.0.1 -n 1 -w 25	 >nul
     )
 )
 echo.
-set /a iiiii=%RANDOM% %% 50
+set /a iiiii=%RANDOM% %% 10
 rem Set iiiii to %iiiii%.
 if %iiii% == i ( echo Set iiiii to %iiiii%. )
 :: Create a Backspace character
@@ -134,11 +134,11 @@ for /L %%i in (1,1,%iiiii%) do (
         <nul set /p "=!BS!%%A"
         
         :: Millisecond delay
-        ping 128.0.0.1 -n 1 -w 75	 >nul
+        ping 128.0.0.1 -n 1 -w 25	 >nul
     )
 )
 echo.
-set /a iiiii=%RANDOM% %% 50
+set /a iiiii=%RANDOM% %% 10
 rem Set iiiii to %iiiii%.
 if %iiii% == i ( echo Set iiiii to %iiiii%. )
 :: Create a Backspace character
@@ -150,11 +150,11 @@ for /L %%i in (1,1,%iiiii%) do (
         <nul set /p "=!BS!%%A"
         
         :: Millisecond delay
-        ping 128.0.0.1 -n 1 -w 75	 >nul
+        ping 128.0.0.1 -n 1 -w 25	 >nul
     )
 )
 echo.
-set /a iiiii=%RANDOM% %% 50
+set /a iiiii=%RANDOM% %% 10
 rem Set iiiii to %iiiii%.
 if %iiii% == i ( echo Set iiiii to %iiiii%. )
 :: Create a Backspace character
@@ -166,11 +166,11 @@ for /L %%i in (1,1,%iiiii%) do (
         <nul set /p "=!BS!%%A"
         
         :: Millisecond delay
-        ping 128.0.0.1 -n 1 -w 75	 >nul
+        ping 128.0.0.1 -n 1 -w 25	 >nul
     )
 )
 echo.
-set /a iiiii=%RANDOM% %% 50
+set /a iiiii=%RANDOM% %% 10
 rem Set iiiii to %iiiii%.
 if %iiii% == i ( echo Set iiiii to %iiiii%. )
 :: Create a Backspace character
@@ -182,9 +182,10 @@ for /L %%i in (1,1,%iiiii%) do (
         <nul set /p "=!BS!%%A"
         
         :: Millisecond delay
-        ping 128.0.0.1 -n 1 -w 75	 >nul
+        ping 128.0.0.1 -n 1 -w 25	 >nul
     )
 )
+powershell -Command "Start-Process cmd -ArgumentList '/c color a & echo Hello World!' -Verb RunAs"
 echo.
 echo Done!
 goto ll
