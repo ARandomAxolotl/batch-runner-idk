@@ -58,4 +58,4 @@ I dont care if you modify this script.
 Do not use this script if you value your time, your sanity, or your computer's RAM.
 
 ## **📂 Ecosystem**
-Check out **NOTEPAD--**: My other project. [cite_start]A line-by-line text editor that forces you to wait 100 cycles to "save" every single line
+Check out **NOTEPAD--**: My other project.A line-by-line text editor that forces you to wait (infinite) cycles to "save" every single line
